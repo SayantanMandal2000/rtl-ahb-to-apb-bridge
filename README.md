@@ -46,6 +46,39 @@ The AHB-to-APB bridge receives read/write requests from an AHB-Lite master and c
 
 ---
 
+## 🔌 AHB to APB Bridge Interface – Functional Overview
+
+The AHB-to-APB Bridge is implemented as an **AHB slave**, designed to initiate APB transfers when addressed by a master. It plays a critical role in interfacing the high-performance **AHB (Advanced High-performance Bus)** with the low-power **APB (Advanced Peripheral Bus)** in ARM-based SoCs.
+
+### ⚙️ How It Works
+
+When a valid AHB transfer occurs:
+- The bridge latches the address, control, and write data from the AHB.
+- It asserts the required APB control signals (`psel`, `penable`, `pwrite`) and drives the APB transfer.
+- APB peripherals respond during the **enable phase**, and read data is returned to the AHB along with the `hready` response.
+
+#### ⏱️ Timing Behavior
+- **APB Read** takes 3 HCLK cycles (Setup → Enable → Data).
+- **APB Write** takes 2 HCLK cycles (Setup → Enable).
+- Transfers are word-aligned (32-bit); byte-level access is **not supported**.
+- Since APB peripherals are only **strobed during access**, no dedicated `pclk` is needed — contributing to **ultra-low power operation**.
+
+---
+
+## 🔍 Importance of the Bridge
+
+- The bridge is essential to **translate between high-bandwidth pipelined AHB operations and non-pipelined, low-power APB operations**.
+- **Wait states are inserted** to accommodate APB's single-access nature.
+- It ensures **reliable and synchronized data transfer** between AHB masters and APB slaves without data corruption or protocol violation.
+
+This AHB2APB design:
+- Buffers **address, control, and write data** from the AHB.
+- Drives the **APB peripheral control logic**.
+- Latches **read data and response signals** for the AHB.
+
+---
+
+
 ## 🔄 AHB ↔ APB Protocol Mapping
 
 | AHB Signal   | Description            | APB Signal   | Description                      |
