@@ -62,4 +62,12 @@ The AHB-to-APB bridge receives read/write requests from an AHB-Lite master and c
 ## 🔁 Finite State Machine
 
 The FSM transitions between the following states:
- ![FSM Diagram](https://github.com/SayantanMandal2000/rtl-ahb-to-apb-bridge/blob/main/sim/AHB2APB_FSM.png).
+ ![FSM Diagram](https://github.com/SayantanMandal2000/rtl-ahb-to-apb-bridge/blob/main/sim/AHB2APB_FSM.png)
+
+---
+
+## ⏱️ Waveform Preview
+
+![Waveform](https://github.com/SayantanMandal2000/rtl-interface-designs/blob/main/valid_ack_fsm_handshake/docs/HandShake_waveform.png).
+
+- Captured using Xilinx Vivado
