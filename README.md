@@ -1,5 +1,10 @@
 # rtl-ahb-to-apb-bridge
 # 🔗 RTL AHB-to-APB Bridge (Verilog)
+![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)
+![Language: Verilog](https://img.shields.io/badge/language-Verilog-yellow.svg)
+![Build: Simulated](https://img.shields.io/badge/build-simulated-green)
+![Waveform: Vivado](https://img.shields.io/badge/waveform-GTKwave-blue)
+![FSM: Implemented](https://img.shields.io/badge/FSM-Implemented-red)
 
 A synthesizable RTL design in Verilog that implements a protocol bridge between the AMBA AHB-Lite and APB buses using a finite state machine (FSM). This bridge facilitates communication between high-speed AHB masters and low-power APB peripherals in SoC environments.
 
