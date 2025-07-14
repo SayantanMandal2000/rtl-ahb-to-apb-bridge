@@ -1,5 +1,4 @@
-# rtl-ahb-to-apb-bridge
-# 🔗 RTL AHB-to-APB Bridge (Verilog)
+# 🔗 RTL AHB-to-APB Bridge 
 ![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)
 ![Language: Verilog](https://img.shields.io/badge/language-Verilog-yellow.svg)
 ![Build: Simulated](https://img.shields.io/badge/build-simulated-green)
@@ -63,4 +62,4 @@ The AHB-to-APB bridge receives read/write requests from an AHB-Lite master and c
 ## 🔁 Finite State Machine
 
 The FSM transitions between the following states:
-
+ ![FSM Diagram](https://github.com/SayantanMandal2000/rtl-interface-designs/blob/main/valid_ack_fsm_handshake/docs/HandShakeMaster_FSM.png).
